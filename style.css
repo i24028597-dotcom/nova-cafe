@@ -1,0 +1,651 @@
+/* ==========================================
+   COFFEE SHOP WEBSITE
+   ICT2215 - HTML & CSS Project
+   ========================================== */
+
+
+/* 1. BRAND COLOURS AND TYPOGRAPHY */
+
+:root {
+    --cream: #F5F1E8;
+    --espresso: #3B2A21;
+    --sage: #8A967A;
+    --caramel: #C69A6D;
+    --white: #FFFFFF;
+
+    --heading-font: "Poppins", sans-serif;
+    --body-font: "Open Sans", sans-serif;
+
+    --container-width: 1200px;
+}
+
+
+/* 2. BASIC RESET */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 95px;
+}
+
+body {
+    font-family: var(--body-font);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.7;
+    color: var(--espresso);
+    background-color: var(--white);
+}
+
+img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input,
+textarea {
+    font: inherit;
+}
+
+.container {
+    width: min(var(--container-width), calc(100% - 64px));
+    margin: 0 auto;
+}
+
+
+/* 3. HEADER AND NAVIGATION */
+
+.site-header {
+    background-color: var(--cream);
+    width: 100%;
+}
+
+.nav-container {
+    min-height: 88px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 28px;
+}
+
+.brand,
+.footer-brand {
+    font-family: var(--heading-font);
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--espresso);
+    white-space: nowrap;
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    gap: 34px;
+}
+
+.main-nav a,
+.footer-links a {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--espresso);
+    transition: color 0.2s ease;
+}
+
+.main-nav a:hover,
+.footer-links a:hover {
+    color: var(--caramel);
+}
+
+.header-button {
+    display: inline-block;
+    background-color: var(--caramel);
+    color: var(--espresso);
+    padding: 10px 25px;
+    font-size: 14px;
+    font-weight: 600;
+    white-space: nowrap;
+    transition: background-color 0.2s ease;
+}
+
+.header-button:hover {
+    background-color: var(--sage);
+}
+
+
+/* 4. BUTTONS */
+
+.primary-button {
+    display: inline-block;
+    border: none;
+    background-color: var(--espresso);
+    color: var(--white);
+    padding: 15px 28px;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.primary-button:hover {
+    background-color: var(--sage);
+    color: var(--white);
+}
+
+
+/* 5. HOME / HERO SECTION */
+
+.hero {
+    min-height: 600px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 64px;
+    padding-top: 65px;
+    padding-bottom: 65px;
+}
+
+.eyebrow {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: var(--sage);
+    margin-bottom: 14px;
+}
+
+.hero h1 {
+    font-family: var(--heading-font);
+    font-size: 48px;
+    line-height: 1.3;
+    font-weight: 700;
+    color: var(--espresso);
+    margin-bottom: 25px;
+}
+
+.hero-description {
+    font-size: 16px;
+    line-height: 1.8;
+    max-width: 460px;
+    margin-bottom: 32px;
+}
+
+.hero-image img {
+    height: 420px;
+    border-radius: 4px;
+}
+
+
+/* 6. ABOUT SECTION */
+
+.about-section {
+    background-color: var(--cream);
+    padding: 85px 0;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 75px;
+}
+
+.about-image img {
+    height: 390px;
+    border-radius: 4px;
+}
+
+.about-content h2,
+.section-heading h2 {
+    font-family: var(--heading-font);
+    font-size: 32px;
+    font-weight: 600;
+    color: var(--espresso);
+    margin-bottom: 25px;
+}
+
+.about-content p:not(.eyebrow) {
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 18px;
+}
+
+
+/* 7. PRODUCTS / SERVICES SECTION */
+
+.menu-section {
+    padding-top: 95px;
+    padding-bottom: 90px;
+}
+
+.section-heading {
+    margin-bottom: 35px;
+}
+
+.section-heading > p:last-child {
+    font-size: 16px;
+}
+
+.section-heading .eyebrow {
+    margin-bottom: 8px;
+}
+
+.section-heading h2 {
+    margin-bottom: 12px;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+.product-card {
+    background-color: var(--cream);
+    padding: 14px;
+    transition: transform 0.2s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-4px);
+}
+
+.product-card img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+}
+
+.product-info {
+    padding: 18px 8px 15px;
+}
+
+.product-info h3 {
+    font-family: var(--heading-font);
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--espresso);
+    margin-bottom: 8px;
+}
+
+.product-info p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+
+/* 8. EMBEDDED VIDEO */
+
+.video-section {
+    margin-top: 70px;
+}
+
+.video-heading {
+    text-align: center;
+    margin-bottom: 22px;
+}
+
+.video-heading h3 {
+    font-family: var(--heading-font);
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.video-heading p {
+    font-size: 16px;
+}
+
+.video-container {
+    width: 100%;
+    max-width: 950px;
+    margin: 0 auto;
+    aspect-ratio: 16 / 9;
+    background-color: var(--espresso);
+    overflow: hidden;
+}
+
+.video-container iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+
+/* 9. CONTACT SECTION */
+
+.contact-section {
+    background-color: var(--cream);
+    padding: 85px 0;
+}
+
+.contact-section .section-heading {
+    margin-bottom: 42px;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 70px;
+    align-items: start;
+}
+
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    padding-top: 20px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.contact-icon {
+    width: 46px;
+    height: 46px;
+    background-color: var(--sage);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border-radius: 50%;
+}
+
+.contact-icon svg {
+    width: 23px;
+    height: 23px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.contact-item h3 {
+    font-family: var(--heading-font);
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.contact-item p {
+    font-size: 14px;
+}
+
+
+/* 10. CONTACT FORM */
+
+.contact-form {
+    background-color: var(--white);
+    padding: 32px;
+}
+
+.contact-form h3 {
+    font-family: var(--heading-font);
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 22px;
+    text-align: center;
+}
+
+.contact-form label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 7px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    display: block;
+    width: 100%;
+    padding: 12px 14px;
+    margin-bottom: 18px;
+    border: 1px solid #D9D2C8;
+    background-color: var(--cream);
+    color: var(--espresso);
+    outline: none;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--sage);
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.contact-form .primary-button {
+    margin-top: 2px;
+}
+
+
+/* 11. FOOTER */
+
+.site-footer {
+    background-color: var(--espresso);
+    color: var(--white);
+    padding: 38px 0;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 24px;
+}
+
+.footer-brand {
+    color: var(--white);
+}
+
+.footer-links {
+    display: flex;
+    gap: 28px;
+}
+
+.footer-links a {
+    color: var(--white);
+}
+
+.footer-container > p {
+    grid-column: 1 / -1;
+    font-size: 13px;
+    color: var(--cream);
+}
+
+
+/* 12. RESPONSIVE DESIGN - TABLETS */
+
+@media (max-width: 900px) {
+
+    .container {
+        width: min(100% - 40px, var(--container-width));
+    }
+
+    .nav-container {
+        flex-wrap: wrap;
+        padding-top: 18px;
+        padding-bottom: 18px;
+        gap: 18px;
+    }
+
+    .main-nav {
+        gap: 20px;
+    }
+
+    .hero {
+        gap: 35px;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .about-grid {
+        gap: 35px;
+    }
+
+    .contact-grid {
+        gap: 35px;
+    }
+}
+
+
+/* 13. RESPONSIVE DESIGN - MOBILE */
+
+@media (max-width: 650px) {
+
+    .container {
+        width: calc(100% - 36px);
+    }
+
+    .nav-container {
+        justify-content: space-between;
+    }
+
+    .brand {
+        font-size: 21px;
+    }
+
+    .main-nav {
+        width: 100%;
+        order: 3;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .main-nav a {
+        font-size: 13px;
+    }
+
+    .header-button {
+        padding: 9px 15px;
+        font-size: 12px;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        min-height: auto;
+        gap: 32px;
+        padding-top: 55px;
+        padding-bottom: 55px;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .hero-image img {
+        height: auto;
+        aspect-ratio: 4 / 3;
+    }
+
+    .about-section {
+        padding: 60px 0;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .about-image img {
+        height: auto;
+        aspect-ratio: 4 / 3;
+    }
+
+    .about-content h2,
+    .section-heading h2 {
+        font-size: 28px;
+    }
+
+    .menu-section {
+        padding-top: 65px;
+        padding-bottom: 65px;
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .product-card img {
+        aspect-ratio: 16 / 10;
+    }
+
+    .video-section {
+        margin-top: 50px;
+    }
+
+    .contact-section {
+        padding: 60px 0;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .contact-form {
+        padding: 22px;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .footer-links {
+        flex-wrap: wrap;
+    }
+
+    .footer-container > p {
+        grid-column: auto;
+    }
+}
+
+
+/* 14. SMALL MOBILE SCREENS */
+
+@media (max-width: 380px) {
+
+    .brand {
+        font-size: 18px;
+    }
+
+    .main-nav {
+        gap: 8px;
+    }
+
+    .main-nav a {
+        font-size: 12px;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .contact-form {
+        padding: 16px;
+    }
+}
